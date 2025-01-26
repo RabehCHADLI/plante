@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('plantes', function (Blueprint $table) {
             $table->id();
-            $table->string('common_name'); // Nom commun de la plante
-            $table->string('city')->nullable(); // Nom commun de la plante
-            $table->json('watering_general_benchmark'); // Benchmark d'arrosage sous forme JSON
+            $table->string('common_name');
+            $table->string('city')->nullable();
+            $table->json('watering_general_benchmark');
             $table->timestamps();
         });
     }
