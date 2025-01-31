@@ -7,6 +7,20 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+/**
+ * @OA\Schema(
+ *     schema="User",
+ *     type="object",
+ *     required={"name", "email", "password"},
+ *     @OA\Property(property="id", type="integer", description="User ID"),
+ *     @OA\Property(property="name", type="string", description="User's name"),
+ *     @OA\Property(property="email", type="string", description="User's email address"),
+ *     @OA\Property(property="password", type="string", description="User's password"),
+ *     @OA\Property(property="email_verified_at", type="string", format="date-time", description="Timestamp when email was verified"),
+ *     @OA\Property(property="created_at", type="string", format="date-time", description="Account creation date"),
+ *     @OA\Property(property="updated_at", type="string", format="date-time", description="Last account update date")
+ * )
+ */
 class User extends Authenticatable
 {
     use HasFactory, Notifiable, HasApiTokens; // Assure-toi d'utiliser HasApiTokens ici

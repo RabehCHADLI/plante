@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PlanteApiDataController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PlanteController;
@@ -25,3 +26,4 @@ Route::prefix('/plante')->group(function () {
     Route::post('/detach', [PlanteUserController::class, 'detachUserFromPlante']);
     Route::post('/userid', [PlanteUserController::class, 'getPlantesByUser']);
 });
+Route::get('/addPlanteApi', [PlanteApiDataController::class, 'addAllPlante']);
